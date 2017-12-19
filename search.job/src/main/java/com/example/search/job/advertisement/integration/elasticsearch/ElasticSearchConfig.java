@@ -13,6 +13,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Configuration
 @EnableElasticsearchRepositories
@@ -33,10 +34,13 @@ class ElasticSearchConfig {
                 .put("xpack.security.user", getCredential())
                 .build();
 
-        final TransportClient client = new PreBuiltTransportClient(esSettings, XPackPlugin.class);
-        return client
-                .addTransportAddress(
-                        new InetSocketTransportAddress(InetAddress.getByName(properties.getHost()), properties.getPort()));
+        return new PreBuiltTransportClient(esSettings, XPackPlugin.class)
+                .addTransportAddress(createTransportAddress());
+    }
+
+    private InetSocketTransportAddress createTransportAddress() throws UnknownHostException {
+        final InetAddress address = InetAddress.getByName(properties.getHost());
+        return new InetSocketTransportAddress(address, properties.getPort());
     }
 
     private String getCredential() {

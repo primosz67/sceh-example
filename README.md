@@ -8,6 +8,11 @@ CQRS = Axon?
 login: elastic
 password: changeme 
 
+### Kibana Setup ###
+indexName : "job_advertisement"
+
+from: @Document(indexName = "job_advertisement", type = "advertisement")
+
 
 ### Elastic not so elastic ### 
 

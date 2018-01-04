@@ -3,3 +3,4 @@ search.job/.idea
 search.job/.gradle
 search.job/out
 **.iml
+.idea

@@ -4,3 +4,9 @@ search.job/.gradle
 search.job/out
 **.iml
 .idea
+.gradle
+build
+**/build
+**/target
+**/.idea
+**/.gradle

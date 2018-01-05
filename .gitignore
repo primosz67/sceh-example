@@ -1,12 +1,12 @@
-.git
-search.job/.idea
-search.job/.gradle
-search.job/out
 **.iml
+.git
+out
 .idea
 .gradle
 build
+
 **/build
 **/target
 **/.idea
 **/.gradle
+**/out

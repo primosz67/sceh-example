@@ -1,0 +1,4 @@
+rootProject.name = 'advertisement.server'
+
+include "advertisement-api"
+project(':advertisement-api').projectDir = new File('../advertisement.api/')

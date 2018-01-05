@@ -3,7 +3,7 @@ package com.example.search.job.advertisement.domain.api;
 import lombok.Data;
 
 @Data
-public class CreateAdvertisementDto {
+public class CreateAdvertisementCommand {
 
     private String title;
     private String city;

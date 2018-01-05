@@ -24,7 +24,6 @@ class ElasticSearchConnectionProperties {
     @Value("${elasticsearch.clustername}")
     private String clusterName;
 
-    //TODO
     @Value("${elasticsearch.password}")
     private String password;
 

@@ -4,7 +4,6 @@ import com.example.search.job.advertisement.query.api.JobAdvertisementDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.ExposesResourceFor;
-import org.springframework.hateoas.Resources;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,8 +33,8 @@ class JobAdvertisementQueryRestController {
     }
 
     @GetMapping(value = {"/", ""})
-    public Resources<JobAdvertisementDto> findJobs() {
-        return new Resources<>(getAllJobs());
+    public List<JobAdvertisementDto> findJobs() {
+        return getAllJobs();
     }
 
     private List<JobAdvertisementDto> getAllJobs() {

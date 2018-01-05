@@ -1,10 +1,10 @@
 package com.example.search.job.advertisement.domain;
 
-import com.example.search.job.advertisement.domain.api.CreateAdvertisementDto;
+import com.example.search.job.advertisement.domain.api.CreateAdvertisementCommand;
 
 class JobAdvertisementFactory {
 
-    JobAdvertisement create(final CreateAdvertisementDto dto) {
+    JobAdvertisement create(final CreateAdvertisementCommand dto) {
         return  JobAdvertisement.builder()
                 .city(dto.getCity())
                 .description(dto.getDescription())

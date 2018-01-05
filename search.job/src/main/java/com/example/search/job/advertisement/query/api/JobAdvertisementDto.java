@@ -2,10 +2,12 @@ package com.example.search.job.advertisement.query.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import org.springframework.hateoas.ResourceSupport;
 import org.springframework.hateoas.core.Relation;
 
-@Data
+
+@Getter
 @AllArgsConstructor
 @Relation("jobs")
 public class JobAdvertisementDto extends ResourceSupport {
